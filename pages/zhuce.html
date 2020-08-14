@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <style>
+        .box{
+            position: relative;
+        }
+        span{
+            position: absolute;
+            height: 34px;
+            line-height: 34px;
+            text-align: right;
+            right: 30px;
+            color: red;
+            top: 0;
+        }
+        #hui{
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>登录</h1>
+    </center>
+    <form class="form-horizontal" action="javascript:;">
+        <div class="form-group col-sm-10 input-lg">
+            <label for="inputEmail3" class="col-sm-2 control-label">电子邮箱</label>
+            <div class="col-sm-10 sbox">
+                <input type="email" class="form-control" placeholder="数字字母开头@数字字母.com或cn">
+                <span></span>
+            </div>
+        </div>
+        <div class="form-group col-sm-10 input-lg">
+            <label for="inputPassword3" class="col-sm-2 control-label">用户名</label>
+            <div class="col-sm-10 sbox">
+                <input type="text" class="form-control" placeholder="用户名由汉字或字母组成">
+                <span></span>
+            </div>
+        </div>
+        <div class="form-group col-sm-10 input-lg">
+            <label for="inputPassword3" class="col-sm-2 control-label">密码</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" placeholder="长度6-11位数字字母">
+            </div>
+        </div>
+        <div class="form-group col-sm-10 input-lg">
+            <label for="inputPassword3" class="col-sm-2 control-label">确认密码</label>
+            <div class="col-sm-10" >
+                <input type="password" class="form-control" placeholder="长度6-11位数字字母">
+            </div>
+        </div>
+        <div class="form-group col-sm-10 input-lg">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="button" class="btn btn-default" id="but">注册</button>
+                <button type="button" class="btn btn-default" id="hui">回到首页</button>
+            </div>
+        </div>
+    </form>
+</body>
+<script src="../js/function.js"></script>
+<script type="text/javascript">
+    var regarr=[/^[0-9a-zA-Z]+@[0-9a-zA-Z]+\.(com|cn)$/,/^([\u4e00-\u9fa5]|[a-zA-Z])+$/,/[0-9]{6,9}/,null];
+    var inputs=document.querySelectorAll("input");
+    var inp=document.querySelector("#but");
+    for(let i=0;i<inputs.length;i++){
+       inputs[i].onblur=function(){
+            var suc=this.parentElement.parentElement;
+            if(i==0){
+                var p1=PAjax({
+                    url:"../server/email.php",
+                    method:"post",
+                    data:{
+                        username:this.value,
+                    },
+                    success:function(res){
+                        resolve(res);
+                    },
+                });
+                p1.then(function(res){
+                    if(!regarr[i].test(inputs[i].value)&&inputs[i]!=""){
+                        inputs[i].nextElementSibling.innerHTML="邮箱格式不对";
+                        suc.setAttribute("class","has-error form-group col-sm-10 input-lg");
+                    }else if(res=="no"){
+                        inputs[i].nextElementSibling.innerHTML="邮箱被注册";
+                        suc.setAttribute("class","has-error form-group col-sm-10 input-lg");
+                    }else{
+                        inputs[i].nextElementSibling.innerHTML="";
+                        suc.setAttribute("class","has-success form-group col-sm-10 input-lg");
+                    }
+                })
+            }
+            if(i==1){
+                var p1=PAjax({
+                    url:"../server/usname.php",
+                    method:"post",
+                    data:{
+                        name:this.value,
+                    },
+                    success:function(res){
+                        resolve(res);
+                    },
+                });
+                p1.then(function(res){
+                    if(!regarr[i].test(inputs[i].value)&&inputs[i]!=""){
+                        inputs[i].nextElementSibling.innerHTML="用户名格式不对";
+                        suc.setAttribute("class","has-error form-group col-sm-10 input-lg");
+                    }else if(res=="no"){
+                        inputs[i].nextElementSibling.innerHTML="用户名被注册";
+                        suc.setAttribute("class","has-error form-group col-sm-10 input-lg");
+                    }else{
+                        inputs[i].nextElementSibling.innerHTML="";
+                        suc.setAttribute("class","has-success form-group col-sm-10 input-lg");
+                    }
+                })
+            }
+            if(i==3){
+                regarr[i]=new RegExp("^"+inputs[i-1].value+"$");
+            }
+            if(regarr[i].test(this.value)&&this.value!=""){
+                suc.setAttribute("class","has-success form-group col-sm-10 input-lg");
+            }else{
+                suc.setAttribute("class","has-error form-group col-sm-10 input-lg");
+            }
+       }
+    }
+    inp.onclick=function(){
+        var bl=true;
+        for(var i=0;i<inputs.length;i++){
+            var suc=inputs[i].parentElement.parentElement.className;
+            if(suc!="has-success form-group col-sm-10 input-lg"){
+               bl=false;
+            }
+        }
+        if(bl){
+            var username=inputs[0].value;
+            var name=inputs[1].value;
+            var password=inputs[2].value;
+            var p=PAjax({
+                url:"../server/zhuce.php",
+                method:"post",
+                data:{
+                    username:username,
+                    name:name,
+                    password:password
+
+                },
+                success:function(res){
+                    resolve(res);
+                },
+            });
+            p.then(function(res){
+                switch(res){
+                    case "ok":
+                        alert("注册成功");
+                        location.href = "./denglu.html";
+                    break;
+                    case "no3":
+                        alert("注册失败请刷新重试");
+                    break;
+               }
+            })
+        }else{
+            alert("全部信息不能为空且格式正确")
+        }
+    }
+    document.querySelector("#hui").onclick=function(){
+        location.href = '../index.html';
+    }
+</script>
+</html>

@@ -1,0 +1,99 @@
+.tnav ul li:nth-child(3) a:after{
+	display: block;
+}
+.tnav ul li:nth-child(3){
+	background: rgb(13, 13, 13);;
+}
+.tnav ul li:nth-child(3) a{
+	color: rgb(13, 13, 13);;
+}
+.main{
+    margin: 0 auto;
+    width: 1200px;
+    background:#414449;
+    padding-bottom: 40px;
+}
+.mybox{
+    padding-left: 100px;   
+}
+textarea{
+    resize: none;
+    height: 180px;
+    width: 1000px;
+    margin-top:50px;
+    font-size: 18px;
+    line-height: 40px;
+    padding:20px;
+}
+.mybox button{
+    padding:15px;
+    background-color: antiquewhite;
+}
+.pxing{
+    display: inline-block;
+    color: #999;
+    cursor: pointer;
+    margin: 15px 0;
+}
+.comment li{
+    padding:25px;
+    border-bottom:2px solid #999;
+}
+.comment li>i{
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.comment li img{
+    width: 90px;
+    height:90px;
+}
+.xinxibox{
+    display: inline-block;
+    vertical-align: top;
+    overflow: hidden;
+    width: 80%;
+    height:150px;
+    padding: 20px;
+}
+.namebox{
+    float: left;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+}
+.xingbox{
+    float: left;
+    color: #999;
+    margin: 0 40px;
+}
+.comment .xinxibox>b{
+    color: #fff;
+    font-size: 12px;
+}
+.timebox{
+    float:right;
+    color: #fff;
+}
+.txt{
+    margin-top: 20px;
+    padding: 10px;
+    color: #fff;
+    line-height: 35px;
+}
+.box{
+    margin: auto;
+    height:40px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-top: 70px;
+}
+.dd{
+    height: 140px;
+    line-height: 140px;
+    text-align: center;
+    color: #fff;
+}

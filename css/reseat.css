@@ -1,0 +1,48 @@
+@charset "UTF-8";
+/*css重置*/
+body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{
+    padding:0;
+    margin:0;
+}
+body,html{
+    font:12px "宋体","Arial Narrow",HELVETICA;
+    background:#fff;
+}
+h1,h2,h3,h4,h5,h6,b,strong{
+    font-weight: normal;
+    font-size:100%;
+}
+i,em{
+    font-style:normal;
+}
+a{
+    text-decoration: none;
+}
+ol,ul,li{
+    list-style: none;
+}
+input{
+    outline:none; /*取消选中表单的蓝色边框*/
+}
+img{
+    vertical-align:top;
+    border:0;
+}
+table{
+    border-collapse:collapse;
+    border-spacing:0
+}
+p{
+    word-wrap:break-word
+}
+.chearfix:after{
+    content:" ";
+    display: block;
+    clear:both;
+    height:0px;
+    overflow: hidden;
+}
+.chearfix{
+    *zoom:1;
+}
+

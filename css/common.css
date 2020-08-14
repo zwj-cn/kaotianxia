@@ -1,0 +1,92 @@
+body,html{
+    font-size:18px;
+    background: rgb(13, 13, 13);
+}
+.navbox{
+	width:100%;
+	background:#333;
+	height:70px;
+}
+.logo{
+	float: left;
+	margin-top:5px;
+	margin-left:100px;
+}
+.tnav{
+	margin: 0 auto;
+	width:1200px;
+	height:70px;
+}
+.tnav ul{
+	height:100%;
+	float: left;
+}
+.tnav ul li{
+	height:100%;
+	float: left;
+	margin-left:50px;
+	position: relative;
+}
+.tnav ul li a{
+	color:#fff;
+	display: block;
+	line-height: 70px;
+	padding-left:30px;
+	padding-right:30px;
+}
+.tnav ul li:hover{
+	background:rgb(13, 13, 13);
+}
+.tnav ul li:hover a{
+	color:rgb(13, 13, 13);
+}
+.tnav .lr{
+	float: right;
+	line-height:66px;
+	color:#fff;
+	margin-right: 40px;
+}
+.tnav .lr a{
+    color: #fff;
+    cursor: pointer;
+}
+.tnav .lr a:hover{
+	color:green;
+}
+.tnav ul li:nth-child(1) a:after{
+	background-image: url("../images/home.png");
+}
+.tnav ul li:nth-child(2) a:after{
+	background-image: url("../images/char.png");
+}
+.tnav ul li:nth-child(3) a:after{
+	background-image: url("../images/join.png");
+}
+.tnav ul li:nth-child(4) a:after{
+	background-image: url("../images/ente.png");
+}
+.tnav ul li a::after{
+	content: "";
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	width: 50px;
+	height:50px;
+	background-color: rgb(13, 13, 13);;
+	display: none;
+	background-size: 100% 100%;
+}
+.tnav ul li a:hover::after{
+	display: block;
+}
+h1{
+	margin: auto;
+    font-weight: bold;
+	font-size:40px;
+	line-height:100px;
+	height: 100px;
+	width: 100%;
+	text-align: center;
+	color:#fff;
+}

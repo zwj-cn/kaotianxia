@@ -1,0 +1,345 @@
+@charset "utf-8";
+body{
+	color: #fff;
+}
+.tnav ul li:nth-child(2) a:after{
+	display: block;
+}
+.tnav ul li:nth-child(2){
+	background: rgb(13, 13, 13);;
+}
+.tnav ul li:nth-child(2) a{
+	color: rgb(13, 13, 13);;
+}
+.ss{
+	margin:auto;
+	width:1300px;
+	background:rgb(33, 33, 33);
+	border:4px solid #393939;
+	box-shadow:inset 0 0 4px 4px #000;
+}
+h2{
+	width: 600px;
+	background:#393939;
+	text-align:right;
+	padding:10px;
+	font-weight: bold;
+	font-size:24px;
+}
+.ss ul{
+	margin:20px;
+	overflow: hidden;
+}
+.ss ul li{
+	float: left;
+	width:220px;
+	height:300px;
+	background:red;
+	margin:15px;
+	position: relative;
+}
+.ss ul li img{
+	width:220px;
+	height:300px;
+}
+.ss ul li p::after{
+	content: "";
+	position: absolute;
+	width:100%;
+	height:3px;
+	background: #C70C4E;
+	left:0px;
+	top:0px;
+}
+.ss ul li p{
+	position: absolute;
+	bottom:0;
+	width:100%;
+	text-align: center;
+	height:40px;
+	line-height: 40px;
+	background:rgba(13, 13, 13, .8);
+
+}
+.jia{
+	position: absolute;
+	border-radius: 50%;
+	width:20px;
+	height:20px;
+	font-weight: bold;
+	font-size:20px;
+	cursor: pointer;
+	top:10px;
+	margin-left: 10px;
+	background-image: url("../images/jia.jpg");
+	background-size: 100% 100%;
+	transition: all .5s;
+}
+.jia:hover{
+	transform: scale(1.2)
+	
+}
+.dd{
+	width: 100%;
+	height:300px;
+	line-height: 300px;
+	background: #000;
+	text-align: center;
+}
+.ele{
+	position: fixed;
+	left:100px;
+	top:140px;
+	color:#fff;
+}
+@keyframes m1{
+	0%{
+	  box-shadow: 0 0 8px 8px #10e3d4;
+	}
+	25% {
+	  box-shadow: 0 0 5px 5px #f9f57a;
+	}
+	50% {
+	 box-shadow: 0 0 8px 8px #ff5089;
+	}
+	75% {
+	  box-shadow: 0 0 5px 5px #477ed1;
+	}
+	100%{
+		box-shadow: 0 0 8px 8px #10e3d4;
+	}
+}
+@keyframes m2{
+	0%{
+	  box-shadow: 0 0 8px 8px #f9f57a;
+	}
+	25% {
+	  box-shadow: 0 0 5px 5px #ff5089;
+	}
+	50% {
+	 box-shadow: 0 0 8px 8px #477ed1;
+	}
+	75% {
+	  box-shadow: 0 0 5px 5px #10e3d4;
+	}
+	100%{
+		box-shadow: 0 0 8px 8px #f9f57a;
+	}
+}
+@keyframes m3{
+	0%{
+	  box-shadow: 0 0 8px 8px #ff5089;
+	}
+	25% {
+	  box-shadow: 0 0 5px 5px #477ed1;
+	}
+	50% {
+	 box-shadow: 0 0 8px 8px #10e3d4;
+	}
+	75% {
+	  box-shadow: 0 0 5px 5px #f9f57a;
+	}
+	100%{
+		box-shadow: 0 0 8px 8px #ff5089;
+	}
+}
+@keyframes m4{
+	0%{
+	  box-shadow: 0 0 8px 8px #477ed1;
+	}
+	25% {
+	  box-shadow: 0 0 5px 5px #10e3d4;
+	}
+	50% {
+	 box-shadow: 0 0 8px 8px #f9f57a;
+	}
+	75% {
+	  box-shadow: 0 0 5px 5px #ff5089;
+	}
+	100%{
+		box-shadow: 0 0 8px 8px #477ed1;
+	}
+}
+.ele ul li{
+	border:1px solid #fff;
+	margin:30px 0px;
+	padding:10px;
+	cursor: pointer;
+	/* animation: m 5s linear infinite; */
+	border-radius: 50%;
+}
+.ele ul li:nth-child(1){
+	animation: m1 5s linear infinite;
+}
+.ele ul li:nth-child(2){
+	animation: m2 5s linear infinite;
+}
+.ele ul li:nth-child(3){
+	animation: m3 5s linear infinite;
+}
+.ele ul li:nth-child(4){
+	animation: m4 5s linear infinite;
+}
+.ele ul li:hover{
+	color:pink;
+}
+.gou{
+	width:100%;
+	position:fixed;
+	bottom:0px;
+	height:50px;
+	background:#333;
+}
+.gou>p{
+	width:60px;
+	height:60px;
+	line-height: 60px;
+	text-align: center;
+	border-radius: 50%;
+	margin-left:300px;
+	position: absolute;
+	bottom:0px;
+	background: rgb(81, 212, 162);
+}
+.gou>p span{
+	font-size:30px;
+}
+.gou>a{
+	float: right;
+	display: block;
+	background: #F66567;
+	height:40px;
+	width:120px;
+	font-size: 30px;
+	margin-top: 5px;
+	color:#fff;
+	margin-right:250px;
+}
+.pin{
+	position: absolute;
+	left:50%;
+	transform: translateX(-50%);
+	width:700px;
+	height:40px;
+	top:5px;
+	background: #ffffff;;
+}
+.tab{
+	user-select:none;
+	position: absolute;
+	bottom:40px;
+	width:694px;
+	left: 3px;
+	max-height:260px;
+	overflow-y: auto;
+	transition: all .5s;
+	background: rgb(249, 249, 249);
+}
+.tab li{
+	height:50px;
+	display: flex;
+	justify-content: space-around;
+	background: #fff;
+	margin:5px 0px;
+	color:#000;
+}
+.tab li i{
+	line-height: 50px;
+}
+.ming{
+	width:200px;
+	color: #8C8C8C;
+}
+.jiajian{
+	width:100px;
+}
+.jiajian span{
+	padding:5px;
+}
+.jiah,.jianh{
+	background:rgb(239, 239, 239);
+	cursor: pointer;
+}
+.shu{
+	display:inline-block;
+	width:20px;
+}
+.danjia{
+	width:50px;
+}
+.xiaoji{
+	width: 70px;
+	color:#E02B41;
+	font-size:20px;
+	font-weight: bold;
+}
+.dx input{
+	width:20px;
+	height:20px;
+	cursor: pointer;
+}
+.shanchu span{
+	cursor: pointer;
+}
+.zongj span,.zongs span{
+	color:yellow;
+	font-size: 20px;
+}
+.di .zongj{
+	width: 150px;
+}
+.di{
+	height:100%;
+	color:#fff;
+	background: rgb(0, 0, 0,.5);
+	border:3px solid #fff;
+	border-top:0px;
+}
+.di li{
+	float: left;
+	margin-top:10px;
+	margin-left:50px;
+	width:110px;
+	text-align: left;
+}
+.quans{
+	font-size: 20px;
+	cursor: pointer;
+}
+.quanx{
+	cursor: pointer;
+}
+.jies{
+	text-align: center;
+}
+.erweima{
+	width: 600px;
+	height:700px;
+	position: fixed;
+	left:50%;
+	top:50%;
+	transform: translate(-50%,-50%);
+	background:url("../images/er.jpg") no-repeat;
+	background-size: 80% 80%;
+	z-index: 999;
+	background-position: center center;
+	background-color: #f2f2f2;
+}
+.erweima p{
+	position: absolute;
+	bottom: 40px;
+	width: 80%;
+	left: 50%;
+	transform: translateX(-50%);
+	text-align: center;
+	color: #000;
+	font-size: 18px;
+}
+.erweima span{
+	position: absolute;
+	right:0px;
+	top:0px;
+	font-size: 30px;
+	background-color: rgb(126, 62, 62);
+	cursor: pointer;
+}
